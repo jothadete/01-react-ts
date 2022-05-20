@@ -1,3 +1,4 @@
+import moment from "moment";
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
@@ -21,6 +22,14 @@ function App() {
       </header>
     </div>
   );
+}
+
+export function sum(a:number, b:number){
+  return a + b
+}
+
+export function nextDay(a:Date){
+  return moment(a).add(1,'day').format("YYYY-MM-DD")
 }
 
 export default App;
