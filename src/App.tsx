@@ -32,4 +32,8 @@ export function nextDay(a:Date){
   return moment(a).add(1,'day').format("YYYY-MM-DD")
 }
 
+export function oneYearBefore(datum:Date){
+  return moment(datum).subtract(1,'year').format("YYYY-MM-DD")
+}
+
 export default App;

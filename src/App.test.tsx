@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import App, { sum, nextDay } from './App';
+import App, { sum, nextDay, oneYearBefore } from './App';
 
 test('renders learn react link', () => {
   render(<App />);
@@ -19,3 +19,9 @@ test('MomentJS - add one day to given date and return as Date', () => {
   expect(date1).toEqual(date2.toISOString().substring(0,10))
 })
 
+test('MomentJS - One Year Before', () => {
+  let date = new Date()
+  let date1 = oneYearBefore(date)
+  let date2 = new Date(date.setDate(date.getDate() - 365))
+  expect(date1).toEqual(date2.toISOString().substring(0,10))
+})
